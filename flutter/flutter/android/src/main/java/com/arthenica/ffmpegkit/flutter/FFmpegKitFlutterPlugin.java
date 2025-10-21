@@ -187,7 +187,7 @@ public class FFmpegKitFlutterPlugin implements FlutterPlugin, ActivityAware, Met
         this.flutterPluginBinding = flutterPluginBinding;
          methodChannel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), METHOD_CHANNEL);
         methodChannel.setMethodCallHandler(this);
-        eventChannel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), EVENT_CHANNEL);
+        eventChannel = new new EventChannel(flutterPluginBinding.getBinaryMessenger(), EVENT_CHANNEL);
         eventChannel.setStreamHandler(this);
     }
 
@@ -202,7 +202,7 @@ public class FFmpegKitFlutterPlugin implements FlutterPlugin, ActivityAware, Met
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding activityPluginBinding) {
         Log.d(LIBRARY_NAME, String.format("FFmpegKitFlutterPlugin %s attached to activity %s.", this, activityPluginBinding.getActivity()));
-        init(flutterPluginBinding.getBinaryMessenger(), flutterPluginBinding.getApplicationContext(), activityPluginBinding.getActivity(), null, activityPluginBinding);
+        // init(flutterPluginBinding.getBinaryMessenger(), flutterPluginBinding.getApplicationContext(), activityPluginBinding.getActivity(), null, activityPluginBinding);
     }
 
     @Override
